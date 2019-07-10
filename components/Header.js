@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <Fragment>
       <header>
-        <nav className="fixed-nav-bar">
+        <nav className="fixd-nav-bar">
           <Logo fill={IconsColor} />
           <HamburgerIcon fill={IconsColor} />
         </nav>
