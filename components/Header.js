@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Fragment, useState } from 'react'
 
 import HamburgerIcon from './HamburgerIcon'
@@ -5,7 +7,7 @@ import Logo from './Logo'
 
 const Header = () => {
   
-  const [ headerBackgroundColor, setHeaderBackgroundColor ] = useState("")
+  const [ headerBackgroundColor, setHeaderBackgroundColor ] = useState<string>("")
   const [ IconsColor, setIconsColor ] = useState("#000000")
 
   return (
