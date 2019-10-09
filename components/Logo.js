@@ -11,7 +11,7 @@ const Logo = (props) => {
             </svg>
             <style jsx>{`
                 svg text {
-                    fill: ${fill};
+                    fill: ${fill || "#000000"};
                     font-size: 2rem;
                 }
             `}</style>
