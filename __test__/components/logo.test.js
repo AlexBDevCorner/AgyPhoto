@@ -8,7 +8,8 @@ describe("Logo component tests", () => {
     it("should render logo without errors", () => {
         const wrapper = shallow(<Logo />)
 
-        expect(wrapper).toBeTruthy()
+        const svgLogo = wrapper.find("[data-test='svg-logo']")
+        expect(svgLogo.length).toBe(1)
     })
 
     it("should render logo svg", () => {
@@ -25,14 +26,4 @@ describe("Logo component tests", () => {
         expect(wrapper.find("JSXStyle").children().text())
             .toEqual(expect.stringContaining(`fill:${fill}`))
     })
-
-    it("should render with fill property equal to default value if fill prop is not passed", () => {
-        const fill = "#000000"
-        
-        const wrapper = shallow(<Logo />)
-
-        expect(wrapper.find("JSXStyle").children().text())
-            .toEqual(expect.stringContaining(`fill:${fill}`))
-    })
-
 })
