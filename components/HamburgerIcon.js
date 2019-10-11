@@ -1,9 +1,12 @@
+//@flow
 import React, { Fragment } from 'react'
 
-const HamburgerIcon = (props) => {
-    
-    const { fill } = props
+type IconProps = {
+    fill : string
+}
 
+const HamburgerIcon = ({ fill } : IconProps) => {
+    
     return (
         <Fragment>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

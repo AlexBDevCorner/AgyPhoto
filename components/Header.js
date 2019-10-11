@@ -1,16 +1,13 @@
 // @flow
-
 import React, { Fragment, useState } from 'react'
 
 import HamburgerIcon from './HamburgerIcon'
 import Logo from './Logo'
 
-type StringState = [string, ((string => string) | string) => void]
-
 const Header = () => {
   
-  const [ headerBackgroundColor , setHeaderBackgroundColor ] : StringState = useState("")
-  const [ IconsColor, setIconsColor ] : StringState = useState("#000000")
+  const [ headerBackgroundColor , setHeaderBackgroundColor ] = useState<string>("")
+  const [ IconsColor, setIconsColor ] = useState<string>("#000000")
 
   return (
     <Fragment>

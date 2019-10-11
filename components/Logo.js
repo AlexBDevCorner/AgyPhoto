@@ -1,11 +1,11 @@
 //@flow
 import React, { Fragment } from 'react'
 
-type Props = {
+type LogoProps = {
     fill : string
 }
 
-const Logo = ({ fill } : Props) => (
+const Logo = ({ fill } : LogoProps) => (
         <Fragment>
             <svg data-test="svg-logo" height="50" width="200">
                 <text id="logo" x="0" y="35">OlivijaOwl</text>

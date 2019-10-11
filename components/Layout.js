@@ -1,7 +1,8 @@
+//@flow
 import React, { Fragment } from 'react'
 import Header from './Header'
 
-const Layout = props => {
+const Layout = (props : Object) => {
     return (
         <Fragment>
             <Header />
