@@ -1,28 +1,32 @@
-//@flow
-import React, { Fragment } from 'react'
-import Header from './Header'
+// @flow
+import React from 'react';
+import Header from './Header';
 
-const Layout = (props : Object) => {
-    return (
-        <Fragment>
-            <Header />
-            {props.children}
-            <style jsx global>{`
-                * {
-                    margin: 0;
-                    padding: 0;
-                }
+const Layout = ({ children }: Object) => {
+  return (
+    <>
+      <Header />
+      {children}
+      <style jsx global>
+        {`
+          * {
+            margin: 0;
+            padding: 0;
+          }
 
-                *, *::before, *::after {
-                    box-sizing: border-box;
-                }
+          *,
+          *::before,
+          *::after {
+            box-sizing: border-box;
+          }
 
-                body {
-                    background-color: green;
-                }
-            `}</style>
-        </Fragment>
-    )
-}
+          body {
+            background-color: green;
+          }
+        `}
+      </style>
+    </>
+  );
+};
 
-export default Layout
+export default Layout;

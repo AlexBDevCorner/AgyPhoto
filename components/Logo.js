@@ -1,22 +1,26 @@
-//@flow
-import React, { Fragment } from 'react'
+// @flow
+import React from 'react';
 
 type LogoProps = {
-    fill : string
-}
+  fill: string
+};
 
-const Logo = ({ fill } : LogoProps) => (
-        <Fragment>
-            <svg data-test="svg-logo" height="50" width="200">
-                <text id="logo" x="0" y="35">OlivijaOwl</text>
-            </svg>
-            <style jsx>{`
-                svg text {
-                    fill: ${fill};
-                    font-size: 2rem;
-                }
-            `}</style>
-    </Fragment>
+const Logo = ({ fill }: LogoProps) => (
+  <>
+    <svg data-test="logo-svg" height="50" width="200">
+      <text x="0" y="35">
+        OlivijaOwl
+      </text>
+    </svg>
+    <style jsx>
+      {`
+        svg text {
+          fill: ${fill};
+          font-size: 2rem;
+        }
+      `}
+    </style>
+  </>
 );
 
 export default Logo;

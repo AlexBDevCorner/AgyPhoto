@@ -1,12 +1,12 @@
-//@flow
-import React from 'react'
+// @flow
+import React from 'react';
 
 type Theme = {
-    mainColor : string
-}
+  mainColor: string
+};
 
-const ThemeContext = React.createContext<Theme>({ mainColor : "green" })
+const ThemeContext = React.createContext<Theme>({ mainColor: 'green' });
 
-export const ThemeProvider = ThemeContext.Provider
-export const ThemeConsumer = ThemeContext.Consumer
-export default ThemeContext
+export const ThemeProvider = ThemeContext.Provider;
+export const ThemeConsumer = ThemeContext.Consumer;
+export default ThemeContext;

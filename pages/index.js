@@ -1,11 +1,10 @@
-import React, { Fragment } from 'react'
+// @flow
+import React from 'react';
 
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 
 const Index = () => {
-    return (
-        <Layout></Layout>
-    )
-}
+  return <Layout data-test="app-layout" />;
+};
 
-export default Index
+export default Index;
