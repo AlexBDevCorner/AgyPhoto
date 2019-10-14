@@ -42,8 +42,17 @@ describe('Header component tests', () => {
     ).toEqual(expect.stringContaining(`background-color:;`));
   });
 
-  it('should pass default header background state to Logo props', () => {
+  it('should pass default header icon color state to Logo props', () => {
     const wrapper = shallowHeaderWrapper();
     const logo = findInWrapper(wrapper, "[data-test='main-logo']");
+
+    expect(logo.props().fill).toBe('#000000');
+  });
+
+  it('should pass default header icon color state to Hamburger Icon props', () => {
+    const wrapper = shallowHeaderWrapper();
+    const logo = findInWrapper(wrapper, "[data-test='hamburger-menu-icon']");
+
+    expect(logo.props().fill).toBe('#000000');
   });
 });

@@ -4,18 +4,18 @@ import React, { useState } from 'react';
 import HamburgerIcon from './HamburgerIcon';
 import Logo from './Logo';
 
-const Header = () => {
-  const [headerBackgroundColor, setHeaderBackgroundColor] = useState<string>(
-    ''
-  );
-  const [IconsColor, setIconsColor] = useState<string>('#000000');
+type HeaderProps = {
+  headerBackgroundColor: string,
+  iconsColor: string
+};
 
+const Header = ({ headerBackgroundColor, iconsColor }: HeaderProps) => {
   return (
     <>
       <header data-test="header">
         <nav className="fixed-nav-bar">
-          <Logo fill={IconsColor} />
-          <HamburgerIcon fill={IconsColor} />
+          <Logo data-test="main-logo" fill={iconsColor} />
+          <HamburgerIcon data-test="hamburger-menu-icon" fill={iconsColor} />
         </nav>
         <style jsx>
           {`
