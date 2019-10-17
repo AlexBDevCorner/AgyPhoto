@@ -1,5 +1,5 @@
 // @flow
-import type { ThemeState } from './Types';
+import type { ThemeState, ThemeAction } from './Types';
 
 function themeReducer(state: ThemeState, action: ThemeAction): ThemeState {
   switch (action.type) {

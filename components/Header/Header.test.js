@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Header from '../../components/Header';
+import Header from './Header';
 
-import { shallowComponent, findInWrapper } from '../testUtils';
+import { shallowComponent, findInWrapper } from '../../testUtils';
 
 const shallowHeaderWrapper = () => shallowComponent(<Header />);
 const shallowHeaderWrapperWithProps = props =>
