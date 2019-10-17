@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "node server.js",
     "test": "node_modules/.bin/jest",
+    "test-coverage": "npm run test --coverage",
     "flow": "flow"
   },
   "keywords": [],
