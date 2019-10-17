@@ -1,8 +1,8 @@
 // @flow
-import React, { useState } from 'react';
+import React from 'react';
 
-import HamburgerIcon from './HamburgerIcon';
-import Logo from './Logo';
+import HamburgerIcon from '../HamburgerIcon/HamburgerIcon';
+import Logo from '../Logo/Logo';
 
 type HeaderProps = {
   headerBackgroundColor: string,

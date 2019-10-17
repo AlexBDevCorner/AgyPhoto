@@ -1,7 +1,7 @@
 // @flow
 import React, { useContext } from 'react';
 import * as types from './ActionTypes';
-import { ThemeState } from './Types';
+import type { ThemeState } from './Types';
 
 type ThemeAction =
   | types.ChangeMainColorAction

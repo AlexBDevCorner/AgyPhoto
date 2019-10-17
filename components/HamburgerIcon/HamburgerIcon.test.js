@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import HamburgerIcon from '../../components/HamburgerIcon';
+import HamburgerIcon from './HamburgerIcon';
 
 describe('HamburgerIcon component tests', () => {
   it('should render hamburger icon without errors', () => {
