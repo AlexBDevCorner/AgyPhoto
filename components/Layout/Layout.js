@@ -1,12 +1,19 @@
-// @flow
-import React from 'react';
-import Header from '../Header/Header';
+import React, { useContext } from 'react';
+import Header from '../Header';
 
-const Layout = ({ children }: Object) => {
+import { ThemeContext } from '../../contexts/Theme';
+
+const Layout = () => {
+  const { state } = useContext(ThemeContext);
+  const { headerBackgroundColor, iconsColor, mainColor } = state;
+
   return (
     <>
-      <Header />
-      {children}
+      <Header
+        data-test="layout-header"
+        headerBackgroundColor={headerBackgroundColor}
+        iconsColor={iconsColor}
+      />
       <style jsx global>
         {`
           * {
@@ -21,7 +28,7 @@ const Layout = ({ children }: Object) => {
           }
 
           body {
-            background-color: green;
+            background-color: ${mainColor};
           }
         `}
       </style>

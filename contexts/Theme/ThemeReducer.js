@@ -1,7 +1,4 @@
-// @flow
-import type { ThemeState, ThemeAction } from './Types';
-
-function themeReducer(state: ThemeState, action: ThemeAction): ThemeState {
+function themeReducer(state, action) {
   switch (action.type) {
     case 'change_main_color':
       return {

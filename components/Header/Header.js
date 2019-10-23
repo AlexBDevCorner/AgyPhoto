@@ -1,20 +1,26 @@
 // @flow
 import React from 'react';
 
-import HamburgerIcon from '../HamburgerIcon/HamburgerIcon';
-import Logo from '../Logo/Logo';
+import HamburgerIcon from '../HamburgerIcon';
+import Logo from '../Logo';
 
 type HeaderProps = {
   headerBackgroundColor: string,
+  pageTitle: string,
   iconsColor: string
 };
 
-const Header = ({ headerBackgroundColor, iconsColor }: HeaderProps) => {
+const Header = ({
+  headerBackgroundColor,
+  pageTitle,
+  iconsColor
+}: HeaderProps) => {
   return (
     <>
       <header data-test="header">
         <nav className="fixed-nav-bar">
           <Logo data-test="main-logo" fill={iconsColor} />
+          {pageTitle}
           <HamburgerIcon data-test="hamburger-menu-icon" fill={iconsColor} />
         </nav>
         <style jsx>

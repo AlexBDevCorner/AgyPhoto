@@ -1,13 +1,10 @@
+/* eslint-disable react/prop-types */
 // @flow
-import React from 'react';
-import type { ThemeState } from './Types';
+import React, { useReducer } from 'react';
 
-const ThemeContext = React.createContext<ThemeState>({
-  mainColor: 'green',
-  iconsColor: '#000000',
-  headerBackgroundColor: ''
-});
+import DefaultInitialState from './DefaultInitialState';
+import ThemeReducer from './ThemeReducer';
 
-export const ThemeProvider = ThemeContext.Provider;
-export const ThemeConsumer = ThemeContext.Consumer;
-export default ThemeContext;
+export const ThemeContext: any = React.createContext(DefaultInitialState);
+
+export const ThemeProvider: any = ThemeContext.Provider;

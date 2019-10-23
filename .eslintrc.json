@@ -20,7 +20,8 @@
     "node/no-unpublished-import": "off",
     "no-undef": "off",
     "import/no-extraneous-dependencies": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types:": "off"
   },
   "parserOptions": {
     "sourceType": "module"

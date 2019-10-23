@@ -51,12 +51,9 @@ describe('Header component tests', () => {
       headerBackgroundColor: '#000000'
     });
 
-    expect(
-      wrapper
-        .find('JSXStyle')
-        .children()
-        .text()
-    ).toEqual(expect.stringContaining(`background-color:#000000;`));
+    expect(wrapper.find('JSXStyle').props().children).toEqual(
+      expect.stringContaining(`background-color:#000000;`)
+    );
   });
 
   it('should pass icon color prop state to Logo props', () => {

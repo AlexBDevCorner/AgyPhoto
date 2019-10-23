@@ -1,17 +1,17 @@
 // @flow
 
 export type ChangeMainColorAction = {
-  type: 'change_main_color',
+  type: string,
   mainColor: string
 };
 
 export type ChangeIconsColorAction = {
-  type: 'change_icons_color',
+  type: string,
   iconsColor: string
 };
 
 export type ChangeHeaderBackgroundColorAction = {
-  type: 'change_header_background_color',
+  type: string,
   headerBackgroundColor: string
 };
 export type ThemeState = {

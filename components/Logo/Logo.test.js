@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import Logo from '../../components/Logo';
+import Logo from './Logo';
 
 describe('Logo component tests', () => {
   it('should render logo without errors', () => {
