@@ -1,12 +1,5 @@
-import React from 'react';
-
 import ThemeReducer from './ThemeReducer';
 import DefaultInitialState from './DefaultInitialState';
-import {
-  changeMainColorAction,
-  changeIconsColor,
-  changeHeaderBackgroundColor
-} from './actions';
 
 describe('ThereReducer tests', () => {
   it('should return default state if not existent action is passed', () => {

@@ -69,4 +69,43 @@ describe('Header component tests', () => {
 
     expect(logo.props().fill).toBe('#000000');
   });
+
+  it('should render Title component', () => {
+    const wrapper = shallowHeaderWrapper();
+    const logo = findInWrapper(wrapper, "[data-test='page-title']");
+
+    expect(logo.length).toBe(1);
+  });
+
+  it('should switch hamburger icon to X icon on click', () => {
+    const wrapper = shallowHeaderWrapper();
+    const hamburgerMenuIcon = findInWrapper(
+      wrapper,
+      "[data-test='hamburger-menu-icon']"
+    );
+
+    hamburgerMenuIcon.simulate('click');
+    const xMenuIcon = findInWrapper(wrapper, "[data-test='x-menu-icon']");
+
+    expect(xMenuIcon.length).toBe(1);
+  });
+
+  it('should switch X icon to hamburger icon on click', () => {
+    const wrapper = shallowHeaderWrapper();
+    const hamburgerMenuIcon = findInWrapper(
+      wrapper,
+      "[data-test='hamburger-menu-icon']"
+    );
+
+    hamburgerMenuIcon.simulate('click');
+    const xMenuIcon = findInWrapper(wrapper, "[data-test='x-menu-icon']");
+
+    xMenuIcon.simulate('click');
+    const hamburgerMenuIconAfterXClosed = findInWrapper(
+      wrapper,
+      "[data-test='hamburger-menu-icon']"
+    );
+
+    expect(hamburgerMenuIconAfterXClosed.length).toBe(1);
+  });
 });
