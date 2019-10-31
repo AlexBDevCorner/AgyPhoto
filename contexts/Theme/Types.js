@@ -5,9 +5,9 @@ export type ChangeMainColorAction = {
   mainColor: string
 };
 
-export type ChangeIconsColorAction = {
+export type ChangeSecondaryColorAction = {
   type: string,
-  iconsColor: string
+  SecondaryColor: string
 };
 
 export type ChangeHeaderBackgroundColorAction = {
@@ -16,11 +16,11 @@ export type ChangeHeaderBackgroundColorAction = {
 };
 export type ThemeState = {
   mainColor: string,
-  iconsColor: string,
+  SecondaryColor: string,
   headerBackgroundColor: string
 };
 
 export type ThemeAction =
   | ChangeMainColorAction
-  | ChangeIconsColorAction
+  | ChangeSecondaryColorAction
   | ChangeHeaderBackgroundColorAction;

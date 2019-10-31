@@ -5,10 +5,10 @@ function themeReducer(state, action) {
         ...state,
         mainColor: action.mainColor
       };
-    case 'change_icons_color':
+    case 'change_secondary_color':
       return {
         ...state,
-        iconsColor: action.iconsColor
+        secondaryColor: action.secondaryColor
       };
     case 'change_header_background_color':
       return {

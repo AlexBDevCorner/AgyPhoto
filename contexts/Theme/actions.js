@@ -3,9 +3,9 @@ export const changeMainColorAction = mainColor => ({
   mainColor: mainColor || ''
 });
 
-export const changeIconsColor = iconsColor => ({
-  type: 'change_main_color',
-  iconsColor: iconsColor || ''
+export const changeSecondaryColor = iconsColor => ({
+  type: 'change_secondary_color',
+  secondaryColor: secondaryColor || ''
 });
 
 export const changeHeaderBackgroundColor = headerBackgroundColor => ({

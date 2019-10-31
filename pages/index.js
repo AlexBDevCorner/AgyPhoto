@@ -13,7 +13,7 @@ const Index = () => {
 
   return (
     <ThemeProvider value={{ state, dispatch }}>
-      <Layout data-test="app-layout" />
+      <Layout data-test="app-layout" pageTitle="" />
     </ThemeProvider>
   );
 };

@@ -3,25 +3,35 @@ import React from 'react';
 
 import HamburgerIcon from '../HamburgerIcon';
 import Logo from '../Logo';
+import Title from '../Title';
 
 type HeaderProps = {
   headerBackgroundColor: string,
   pageTitle: string,
-  iconsColor: string
+  secondaryColor: string,
+  isMenuOpen: boolean,
+  setIsMenuOpen: any
 };
 
 const Header = ({
   headerBackgroundColor,
   pageTitle,
-  iconsColor
+  secondaryColor,
+  isMenuOpen,
+  setIsMenuOpen
 }: HeaderProps) => {
   return (
     <>
       <header data-test="header">
         <nav className="fixed-nav-bar">
-          <Logo data-test="main-logo" fill={iconsColor} />
-          {pageTitle}
-          <HamburgerIcon data-test="hamburger-menu-icon" fill={iconsColor} />
+          <Logo data-test="main-logo" fill={secondaryColor} />
+          <Title pageTitle={pageTitle} textColor={secondaryColor} />
+          <HamburgerIcon
+            data-test="hamburger-menu-icon"
+            isMenuOpen={isMenuOpen}
+            setIsMenuOpen={setIsMenuOpen}
+            fill={secondaryColor}
+          />
         </nav>
         <style jsx>
           {`
