@@ -31,7 +31,7 @@ const Index = () => {
             item && (
               <animated.div key={key} style={props}>
                 <Layout data-test="app-layout" pageTitle="">
-                  {'Home page'}
+                  <div style={{color: "white"}}>{"azaza"}</div>
                 </Layout>
               </animated.div>
             )

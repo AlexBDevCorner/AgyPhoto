@@ -1,15 +1,12 @@
 import React, { useContext } from 'react';
 
 import MenuIcon from '../MenuIcon';
-import MenuIconSwitch from '../MenuIconSwitch';
 import Logo from '../Logo';
 import Title from '../Title';
 
 import { ThemeContext } from '../../contexts/Theme';
-import { MainMenuContext } from '../../contexts/MainMenu';
 
 const Header = ({ pageTitle }) => {
-  const { isMenuOpen, setIsMenuOpen } = useContext(MainMenuContext);
   const { state } = useContext(ThemeContext);
 
   const { headerBackgroundColor, secondaryColor } = state;
@@ -35,7 +32,7 @@ const Header = ({ pageTitle }) => {
               left: 0;
               z-index: 9999;
               width: 100%;
-              height: 50px;
+              height: 5vh;
               background-color: ${headerBackgroundColor};
             }
 

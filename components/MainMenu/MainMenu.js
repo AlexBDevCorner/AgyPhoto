@@ -14,9 +14,11 @@ const MainMenu = ({ config }) => {
       <style jsx>
         {`
           menu {
+            height: 80vh;
             display: flex;
             flex-direction: column;
             text-align: center;
+            justify-content: center;
           }
         `}
       </style>

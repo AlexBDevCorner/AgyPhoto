@@ -21,6 +21,7 @@ const MainMenuItem = ({ name, link, icon }) => {
             font-weight: 400;
             text-decoration: none;
             color: ${secondaryColor};
+            margin-bottom: 1rem;
           }
         `}
       </style>

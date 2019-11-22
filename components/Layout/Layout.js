@@ -28,27 +28,28 @@ const Layout = ({ pageTitle, children }) => {
 
   const { isMenuOpen } = useContext(MainMenuContext);
 
-  const transitions = useTransition(isMenuOpen, null, {
+  const components = [
+    { comp: <MainMenu config={testConfig} />, id: "menu-component" },
+    { comp: children, id: "children-component" }
+  ];
+  
+  const index = isMenuOpen ? 0 : 1;
+
+  const transitions = useTransition(components[index], item => item.id, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
-    leave: { opacity: 0 },
-    unique: true
+    leave: { opacity: 0 }
   });
 
   return (
     <>
       <Header data-test="layout-header" pageTitle={pageTitle} />
 
-      {transitions.map(({ item, key, props }) =>
-        item ? (
-          <animated.div key={key} style={props}>
-            <MainMenu config={testConfig} />
-          </animated.div>
-        ) : (
-          <animated.div key={key} style={props}>
-            {children}
-          </animated.div>
-        )
+      {transitions.map(({ item, key, props }) => (
+        <animated.div key={key} style={props}>
+          {item.comp}
+        </animated.div>
+      )
       )}
 
       <style jsx global>
@@ -72,11 +73,7 @@ const Layout = ({ pageTitle, children }) => {
           }
 
           header {
-            height: 20vh;
-          }
-
-          menu {
-            margin-top: 30vh;
+            height: 5vh;
           }
         `}
       </style>

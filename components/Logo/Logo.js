@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Logo = ({ width = 32, height = 32, fill }) => (
+const Logo = ({ width = 34, height = 34, fill }) => (
   <>
     <svg
       width={width}
@@ -19,6 +19,13 @@ const Logo = ({ width = 32, height = 32, fill }) => (
         fillRule="nonzero"
       />
     </svg>
+    <style jsx>
+      {`
+        svg {
+          
+        }
+      `}
+    </style>
   </>
 );
 
