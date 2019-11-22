@@ -1,12 +1,30 @@
-// @flow
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
 
-const MainMenuItem = ({ name, link }: { link: string, name: string }) => {
+import { ThemeContext } from '../../contexts/Theme';
+
+const MainMenuItem = ({ name, link, icon }) => {
+  const { state } = useContext(ThemeContext);
+  const { secondaryColor } = state;
+
   return (
-    <Link href={`/${link}`}>
-      <a>{name}</a>
-    </Link>
+    <>
+      <Link href={`/${link}`}>
+        <a>{name}</a>
+      </Link>
+      <style jsx>
+        {`
+          a {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-size: 2rem;
+            font-weight: 400;
+            text-decoration: none;
+            color: ${secondaryColor};
+          }
+        `}
+      </style>
+    </>
   );
 };
 

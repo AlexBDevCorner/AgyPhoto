@@ -1,13 +1,14 @@
-// @flow
 import React from 'react';
 
-type TitleProps = { pageTitle: string, textColor: string };
-
-const Title = ({ pageTitle, textColor }: TitleProps) => (
+const Title = ({ pageTitle, textColor }) => (
   <>
     <h1 data-test="page-title">{pageTitle}</h1>
     <style jsx>
-      {` h1 {color: ${textColor}}`}
+      {`
+        h1 {
+          color: ${textColor};
+        }
+      `}
     </style>
   </>
 );

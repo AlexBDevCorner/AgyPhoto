@@ -10,7 +10,7 @@ import {
 } from '../contexts/Theme';
 import { MainMenuProvider } from '../contexts/MainMenu';
 
-const Index = () => {
+const AboutMe = () => {
   const [state, dispatch] = useReducer(ThemeReducer, DefaultInitialState);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const Index = () => {
             item && (
               <animated.div key={key} style={props}>
                 <Layout data-test="app-layout" pageTitle="">
-                  {'Home page'}
+                  {'About me page'}
                 </Layout>
               </animated.div>
             )
@@ -42,4 +42,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default AboutMe;

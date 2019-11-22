@@ -1,37 +1,26 @@
-// @flow
-import React from 'react';
+import React, { useContext } from 'react';
 
-import HamburgerIcon from '../HamburgerIcon';
+import MenuIcon from '../MenuIcon';
+import MenuIconSwitch from '../MenuIconSwitch';
 import Logo from '../Logo';
 import Title from '../Title';
 
-type HeaderProps = {
-  headerBackgroundColor: string,
-  pageTitle: string,
-  secondaryColor: string,
-  isMenuOpen: boolean,
-  setIsMenuOpen: any
-};
+import { ThemeContext } from '../../contexts/Theme';
+import { MainMenuContext } from '../../contexts/MainMenu';
 
-const Header = ({
-  headerBackgroundColor,
-  pageTitle,
-  secondaryColor,
-  isMenuOpen,
-  setIsMenuOpen
-}: HeaderProps) => {
+const Header = ({ pageTitle }) => {
+  const { isMenuOpen, setIsMenuOpen } = useContext(MainMenuContext);
+  const { state } = useContext(ThemeContext);
+
+  const { headerBackgroundColor, secondaryColor } = state;
+
   return (
     <>
       <header data-test="header">
         <nav className="fixed-nav-bar">
           <Logo data-test="main-logo" fill={secondaryColor} />
           <Title pageTitle={pageTitle} textColor={secondaryColor} />
-          <HamburgerIcon
-            data-test="hamburger-menu-icon"
-            isMenuOpen={isMenuOpen}
-            setIsMenuOpen={setIsMenuOpen}
-            fill={secondaryColor}
-          />
+          <MenuIcon />
         </nav>
         <style jsx>
           {`
@@ -49,6 +38,10 @@ const Header = ({
               height: 50px;
               background-color: ${headerBackgroundColor};
             }
+
+            .menu-icon-container {
+              position: relative;
+            }
           `}
         </style>
       </header>
@@ -58,4 +51,12 @@ const Header = ({
 
 export default Header;
 
-// #1F2833
+/* <div
+            className="menu-icon-container"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <MenuIconSwitch
+              isMenuOpen={isMenuOpen}
+              data-test="menu-icon-switch"
+            />
+          </div> */

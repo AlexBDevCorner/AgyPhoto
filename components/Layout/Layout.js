@@ -1,15 +1,11 @@
-// @flow
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
+import { useTransition, animated } from 'react-spring';
 
 import Header from '../Header';
 import MainMenu from '../MainMenu';
 
 import { ThemeContext } from '../../contexts/Theme';
-
-type LayoutProps = {
-  pageTitle: string,
-  children: any
-};
+import { MainMenuContext } from '../../contexts/MainMenu';
 
 const testConfig = [
   {
@@ -26,23 +22,34 @@ const testConfig = [
   }
 ];
 
-const Layout = ({ pageTitle, children }: LayoutProps) => {
+const Layout = ({ pageTitle, children }) => {
   const { state } = useContext(ThemeContext);
-  const { headerBackgroundColor, secondaryColor, mainColor } = state;
+  const { mainColor } = state;
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // if isMenuOpen then show children, otherwise show menu
+  const { isMenuOpen } = useContext(MainMenuContext);
+
+  const transitions = useTransition(isMenuOpen, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    unique: true
+  });
+
   return (
     <>
-      <Header
-        data-test="layout-header"
-        pageTitle={pageTitle}
-        headerBackgroundColor={headerBackgroundColor}
-        secondaryColor={secondaryColor}
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-      />
-      {isMenuOpen ? <MainMenu config={testConfig} /> : children}
+      <Header data-test="layout-header" pageTitle={pageTitle} />
+
+      {transitions.map(({ item, key, props }) =>
+        item ? (
+          <animated.div key={key} style={props}>
+            <MainMenu config={testConfig} />
+          </animated.div>
+        ) : (
+          <animated.div key={key} style={props}>
+            {children}
+          </animated.div>
+        )
+      )}
 
       <style jsx global>
         {`
@@ -59,6 +66,13 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
 
           body {
             background-color: ${mainColor};
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+          }
+
+          header {
+            height: 20vh;
           }
 
           menu {
