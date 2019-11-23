@@ -28,29 +28,12 @@ const Layout = ({ pageTitle, children }) => {
 
   const { isMenuOpen } = useContext(MainMenuContext);
 
-  const components = [
-    { comp: <MainMenu config={testConfig} />, id: "menu-component" },
-    { comp: children, id: "children-component" }
-  ];
-  
-  const index = isMenuOpen ? 0 : 1;
-
-  const transitions = useTransition(components[index], item => item.id, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 }
-  });
-
   return (
     <>
       <Header data-test="layout-header" pageTitle={pageTitle} />
 
-      {transitions.map(({ item, key, props }) => (
-        <animated.div key={key} style={props}>
-          {item.comp}
-        </animated.div>
-      )
-      )}
+      <MainMenu config={testConfig} />
+      {children}
 
       <style jsx global>
         {`
@@ -70,6 +53,7 @@ const Layout = ({ pageTitle, children }) => {
             display: flex;
             flex-direction: column;
             width: 100vw;
+            overflow-x: hidden;
           }
 
           header {

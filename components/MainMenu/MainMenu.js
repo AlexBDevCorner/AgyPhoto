@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { MainMenuContext } from '../../contexts/MainMenu';
 
 import MainMenuItem from './MainMenuItem';
 
@@ -7,6 +9,10 @@ const MainMenu = ({ config }) => {
     <MainMenuItem key={link.name} name={link.name} link={link.link} />
   ));
 
+  const { isMenuOpen } = useContext(MainMenuContext);
+
+  const visibility = isMenuOpen ? 'visible' : 'hidden';
+
   return (
     <>
       <menu>{items}</menu>
@@ -14,11 +20,17 @@ const MainMenu = ({ config }) => {
       <style jsx>
         {`
           menu {
-            height: 80vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            visibility: ${visibility};
             display: flex;
-            flex-direction: column;
-            text-align: center;
+            align-items: center;
             justify-content: center;
+            flex-direction: column;
           }
         `}
       </style>
