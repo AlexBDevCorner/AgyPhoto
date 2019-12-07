@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
-import { useTransition, animated } from 'react-spring';
 
 import Header from '../Header';
 import MainMenu from '../MainMenu';
 
 import { ThemeContext } from '../../contexts/Theme';
-import { MainMenuContext } from '../../contexts/MainMenu';
 
 const testConfig = [
   {
@@ -25,8 +23,6 @@ const testConfig = [
 const Layout = ({ pageTitle, children }) => {
   const { state } = useContext(ThemeContext);
   const { mainColor } = state;
-
-  const { isMenuOpen } = useContext(MainMenuContext);
 
   return (
     <>
@@ -57,7 +53,7 @@ const Layout = ({ pageTitle, children }) => {
           }
 
           header {
-            height: 5vh;
+            height: 10vh;
           }
         `}
       </style>

@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next",
+    "start": "next start",
     "test": "node_modules/.bin/jest",
     "test-coverage": "npm run test --coverage",
-    "flow": "flow"
+    "flow": "flow",
+    "build": "next build",
+    "export": "next export",
+    "deploy": "npm run build && npm run export"
   },
   "keywords": [],
   "author": "",
@@ -18,9 +22,9 @@
     "fontfaceobserver": "^2.1.0",
     "next": "^8.1.0",
     "next-page-transitions": "^1.0.0-beta.2",
-    "react": "^16.8.6",
+    "react": "^16.12.0",
     "react-addons-css-transition-group": "^15.6.2",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.12.0",
     "react-spring": "^8.0.27"
   },
   "devDependencies": {

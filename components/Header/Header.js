@@ -32,7 +32,7 @@ const Header = ({ pageTitle }) => {
               left: 0;
               z-index: 9999;
               width: 100%;
-              height: 5vh;
+              height: 10vh;
               background-color: ${headerBackgroundColor};
             }
 

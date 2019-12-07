@@ -2,7 +2,9 @@ import React, { useReducer, useEffect } from 'react';
 import { useTransition, animated } from 'react-spring';
 
 import Font from '../components/Font';
-import Layout from '../components/Layout/Layout';
+import Layout from '../components/Layout';
+import Carousel from '../components/Carousel';
+
 import {
   ThemeProvider,
   ThemeReducer,
@@ -31,7 +33,7 @@ const Index = () => {
             item && (
               <animated.div key={key} style={props}>
                 <Layout data-test="app-layout" pageTitle="">
-                  <div style={{color: "white"}}>{"azaza"}</div>
+                  <Carousel />
                 </Layout>
               </animated.div>
             )
