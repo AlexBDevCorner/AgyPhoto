@@ -23,11 +23,9 @@ const testConfig = [
 const Layout = ({ pageTitle, children }) => {
   const { state } = useContext(ThemeContext);
   const { mainColor } = state;
-
+  //<Header data-test="layout-header" pageTitle={pageTitle} />
   return (
     <>
-      <Header data-test="layout-header" pageTitle={pageTitle} />
-
       <MainMenu config={testConfig} />
       {children}
 

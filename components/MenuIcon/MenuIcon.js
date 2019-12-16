@@ -3,15 +3,14 @@ import React, { useContext } from 'react';
 import { MainMenuContext } from '../../contexts/MainMenu';
 
 const MenuIcon = () => {
-  
   const { isMenuOpen, setIsMenuOpen } = useContext(MainMenuContext);
 
-  const clickHandler = (e) => { 
+  const clickHandler = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const menuState = isMenuOpen ? "close" : "";
-  
+  const menuState = isMenuOpen ? 'close' : '';
+
   return (
     <>
       <div className={`menu ${menuState}`} onClick={() => clickHandler()}>
@@ -28,13 +27,13 @@ const MenuIcon = () => {
           }
 
           .menu.close .line1 {
-            transform:rotate(45deg);
+            transform: rotate(45deg);
             top: 50%;
           }
 
           .menu.close .line2,
           .menu.close .line3 {
-            transform:rotate(-45deg);
+            transform: rotate(-45deg);
             top: 50%;
           }
 
@@ -42,7 +41,7 @@ const MenuIcon = () => {
             position: absolute;
             height: 0.15rem;
             width: 2rem;
-            background: white;
+            background: black;
             border-radius: 8px;
             transition: all ease 0.3s;
           }
