@@ -82,8 +82,8 @@ const Index = () => {
           }
 
           picture {
-            justify-content: right;
             display: flex;
+            justify-content: flex-end;
           }
 
           picture img {
