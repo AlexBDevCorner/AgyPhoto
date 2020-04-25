@@ -1,5 +1,5 @@
 export default {
-  mainColor: '#FFFFFF',
+  mainColor: 'hsl(0, 0%, 7%)',
   secondaryColor: '#000000',
   headerBackgroundColor: ''
 };

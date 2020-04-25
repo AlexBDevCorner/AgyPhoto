@@ -49,10 +49,6 @@ const Layout = ({ pageTitle, children }) => {
             width: 100vw;
             overflow-x: hidden;
           }
-
-          header {
-            height: 10vh;
-          }
         `}
       </style>
     </>
