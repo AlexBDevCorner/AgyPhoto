@@ -3,9 +3,9 @@ import { useTransition, animated } from 'react-spring';
 
 import Font from '../components/Font';
 import Layout from '../components/Layout';
-import Logo from '../components/Logo';
+import Facebook from '../components/Facebook';
 
-import { Client } from '../prismic-configuration';
+//import { Client } from '../prismic-configuration';
 
 import {
   ThemeProvider,
@@ -13,72 +13,168 @@ import {
   DefaultInitialState
 } from '../contexts/Theme';
 import { MainMenuProvider } from '../contexts/MainMenu';
+import Instagram from '../components/Instagram';
 
-const Index = ({ stars }) => {
+const Index = ({ images }) => {
   const [state, dispatch] = useReducer(ThemeReducer, DefaultInitialState);
 
   useEffect(() => {
     Font();
   });
 
-  const transitions = useTransition(true, null, {
-    from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
-    enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-    leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' }
-  });
-  console.log(stars);
+  // const transitions = useTransition(true, null, {
+  //   from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
+  //   enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+  //   leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' }
+  // });
+
+  // console.log(images);
+  // const imageLink = `${images[0].Desktop.url} 1200w`;
+  // const sourceImage = `${images[0].url}`;
+
+  // const carouselImages = images.map(x => {
+  //   return {
+  //     url: x.TEST.url,
+  //     h: x.TEST.dimensions.height,
+  //     id: x.TEST.url,
+  //     alt: 'img0'
+  //   };
+  // });
+  // console.log(carouselImages);
+
   return (
     <>
       <ThemeProvider value={{ state, dispatch }}>
         <MainMenuProvider>
-          {transitions.map(({ item, key, props }) => {
+          {/* {transitions.map(({ item, key, props }) => {
             return (
               item && (
-                <animated.div key={key} style={props}>
-                  <Layout data-test="app-layout" pageTitle="">
-                    <section id="home-section">
-                      <Logo width="500px" />
-                    </section>
-                    <section id="about-me-section">
-                      <div className="about-me-story">
-                        <div className="white-line">
-                          <picture className="about-me-picture">
-                            <source
-                              media="(min-width: 650px)"
-                              srcSet="../static/images/IMG_6214.jpg-1280.jpg 1200w"
-                            />
-                            <source
-                              media="(min-width: 290px)"
-                              srcSet="../static/images/IMG_6214.jpg-600.jpg 600w"
-                            />
-                            <source
-                              media="(max-width: 289px)"
-                              srcSet="../static/images/IMG_6214.jpg-300.jpg 300w"
-                            />
-                            <img
-                              src="../static/images/IMG_6214.jpg-1500.jpg"
-                              alt="Nice girl"
-                            />
-                          </picture>
-                        </div>
-                      </div>
-                    </section>
-                  </Layout>
-                </animated.div>
-              )
-            );
-          })}
+                <animated.div key={key} style={props}> */}
+          <Layout data-test="app-layout" pageTitle="">
+            <section id="reconstruction">
+              <p className="msg ru-msg">
+                Привет! К сожалению сейчас сайт закрыт на реконструкцию. Скоро
+                всё будет на месте, а пока-что мной можно связаться в социальных
+                сетях!
+              </p>
+              <p className="msg lv-msg">
+                Labdien! Diemžēl saits ir aizvērts rekontrukcijas dēļ. Drīzumā
+                viss būs savā vietā, pagaidām ar mani var sazināties sociālajos
+                tīklos!
+              </p>
+              <p className="msg en-msg">
+                Hello! Unfortunately site is closed due to reconstruction. Soon
+                everything will be in place again, for now you can contact me in
+                social networks!
+              </p>
+              <div>
+                <Facebook />
+                <Instagram />
+              </div>
+            </section>
+            {/* <section id="home-section">
+              <div className="column main-column">
+                <nav>
+                  <ul>
+                    <li>Home</li>
+                    <li>Gallery</li>
+                    <li>About Me</li>
+                  </ul>
+                </nav>
+              </div>
+              <div className="column content-column">
+                <div className="column about-me-column">
+                  <div className="about-me-text">
+                    <p>Hello! That is me!</p>
+                  </div>
+                  <picture>
+                    <source
+                      media="(min-width: 650px)"
+                      srcSet={carouselImages[0].url}
+                    />
+                    <img src="img_orange_flowers.jpg" alt="Flowers" />
+                  </picture>
+                </div>
+                <div className="column portrait-column"></div>
+              </div>
+              </section> */}
+          </Layout>
+          {/* </animated.div> */}
         </MainMenuProvider>
       </ThemeProvider>
       <style jsx>
         {`
-          #home-section {
+          #reconstruction {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
           }
+
+          #reconstruction div {
+            margin-top: 30px;
+            display: flex;
+            width: 140px;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+
+          #reconstruction div:hover {
+            cursor: pointer;
+          }
+
+          .msg {
+            color: #99a3a6;
+            font-family: 'Exo 2';
+            margin-bottom: 15px;
+            padding-right: 10px;
+            padding-left: 10px;
+          }
+
+          #home-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+          }
+
+          .column {
+            height: 100%;
+            width: 100%;
+          }
+
+          .main-column {
+            width: 600px;
+          }
+
+          .main-column li {
+            color: #526165;
+            font-family: 'Exo 2';
+          }
+
+          .main-column li:hover {
+            color: #99a3a6;
+          }
+
+          .content-column {
+            background-color: white;
+          }
+
+          .about-me-column {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+          }
+
+          .about-me-text {
+            height: 100%;
+          }
+
+          // .about-me-column picture {
+          //   height: ${carouselImages[0].h}px;
+          // }
 
           .two-column-grid-section {
             display: grid;
@@ -185,16 +281,10 @@ const Index = ({ stars }) => {
             height: 100vh;
           }
 
-          .about-me-picture {
-            position: absolute;
-            right: 30%;
-            bottom: -10%;
-          }
-
           .about-me-picture img {
             object-fit: cover;
-            width: 300px;
-            height: 600px;
+            width: 1200px;
+            height: 800px;
             border: solid;
             border-width: 15px;
             border-color: white;
@@ -220,13 +310,17 @@ const Index = ({ stars }) => {
   );
 };
 
-export async function getStaticProps() {
-  const home = await Client().query('[at(document.id, XqQg0xEAACIAaNkn")]');
-  return {
-    props: {
-      stars: home
-    }
-  };
-}
+// export async function getStaticProps() {
+//   const prismicData = await Client().query(
+//     '[at(document.type, "mainpageimage")]'
+//   );
+
+//   const images = prismicData.results.map(im => im.data.image);
+//   return {
+//     props: {
+//       images
+//     }
+//   };
+// }
 
 export default Index;

@@ -7,13 +7,7 @@ import ArrowRight from './Icons/ArrowRight';
 import PlayButton from './Icons/PlayButton';
 import PauseButton from './Icons/PauseButton';
 
-const imagesMockup = [
-  { url: 'https://picsum.photos/id/307/375/500', id: 0, alt: 'img0' },
-  { url: 'https://picsum.photos/id/308/375/500', id: 1, alt: 'img1' },
-  { url: 'https://picsum.photos/id/310/375/500', id: 2, alt: 'img2' }
-];
-
-const DEFAULT_DELAY = 2000;
+const DEFAULT_DELAY = 5000;
 
 const Carousel = ({ images = imagesMockup }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -91,15 +85,15 @@ const Carousel = ({ images = imagesMockup }) => {
         {`
           picture {
             position: relative;
-            max-width: 800px;
-            max-height: 600px;
+            max-width: 1200px;
+            max-height: 800px;
             display: inline-block;
           }
 
           picture img {
             display: block;
-            max-width: 800px;
-            max-height: 600px;
+            max-width: 1200px;
+            max-height: 800px;
             height: auto;
           }
 
