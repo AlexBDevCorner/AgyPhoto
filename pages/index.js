@@ -54,8 +54,8 @@ const Index = ({ images }) => {
             <section id="reconstruction">
               <p className="msg ru-msg">
                 Привет! К сожалению сейчас сайт закрыт на реконструкцию. Скоро
-                всё будет на месте, а пока-что мной можно связаться в социальных
-                сетях!
+                всё будет на месте, а пока-что со мной можно связаться в
+                социальных сетях!
               </p>
               <p className="msg lv-msg">
                 Labdien! Diemžēl saits ir aizvērts rekontrukcijas dēļ. Drīzumā
