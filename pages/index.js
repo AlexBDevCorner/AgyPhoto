@@ -125,7 +125,7 @@ const Index = ({ images }) => {
           }
 
           .msg {
-            color: ##fdfdff;
+            color: #F0FFFF;
             font-family: 'Exo 2';
             margin-bottom: 15px;
             padding-right: 10px;
