@@ -1,11 +1,11 @@
 import React, { useReducer, useEffect } from 'react';
-import { useTransition, animated } from 'react-spring';
+// import { useTransition, animated } from 'react-spring';
 
 import Font from '../components/Font';
 import Layout from '../components/Layout';
 import Facebook from '../components/Facebook';
 
-//import { Client } from '../prismic-configuration';
+// import { Client } from '../prismic-configuration';
 
 import {
   ThemeProvider,
@@ -125,7 +125,7 @@ const Index = ({ images }) => {
           }
 
           .msg {
-            color: #99a3a6;
+            color: ##fdfdff;
             font-family: 'Exo 2';
             margin-bottom: 15px;
             padding-right: 10px;
