@@ -23,10 +23,9 @@ const testConfig = [
 const Layout = ({ pageTitle, children }) => {
   const { state } = useContext(ThemeContext);
   const { mainColor } = state;
-  //<Header data-test="layout-header" pageTitle={pageTitle} />
+
   return (
     <>
-      <MainMenu config={testConfig} />
       {children}
 
       <style jsx global>

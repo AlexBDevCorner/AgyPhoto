@@ -3,7 +3,9 @@ import React, { useReducer, useEffect } from 'react';
 
 import Font from '../components/Font';
 import Layout from '../components/Layout';
-import Facebook from '../components/Facebook';
+
+import Home from '../components/Home';
+import MaintenanceMock from '../components/MaintenanceMock';
 
 // import { Client } from '../prismic-configuration';
 
@@ -12,8 +14,8 @@ import {
   ThemeReducer,
   DefaultInitialState
 } from '../contexts/Theme';
-import { MainMenuProvider } from '../contexts/MainMenu';
-import Instagram from '../components/Instagram';
+
+const maintenance = true;
 
 const Index = ({ images }) => {
   const [state, dispatch] = useReducer(ThemeReducer, DefaultInitialState);
@@ -22,85 +24,14 @@ const Index = ({ images }) => {
     Font();
   });
 
-  // const transitions = useTransition(true, null, {
-  //   from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
-  //   enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-  //   leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' }
-  // });
-
-  // console.log(images);
-  // const imageLink = `${images[0].Desktop.url} 1200w`;
-  // const sourceImage = `${images[0].url}`;
-
-  // const carouselImages = images.map(x => {
-  //   return {
-  //     url: x.TEST.url,
-  //     h: x.TEST.dimensions.height,
-  //     id: x.TEST.url,
-  //     alt: 'img0'
-  //   };
-  // });
-  // console.log(carouselImages);
+  const Content = maintenance ? <MaintenanceMock /> : <Home />;
 
   return (
     <>
       <ThemeProvider value={{ state, dispatch }}>
-        <MainMenuProvider>
-          {/* {transitions.map(({ item, key, props }) => {
-            return (
-              item && (
-                <animated.div key={key} style={props}> */}
-          <Layout data-test="app-layout" pageTitle="">
-            <section id="reconstruction">
-              <p className="msg ru-msg">
-                Привет! К сожалению сейчас сайт закрыт на реконструкцию. Скоро
-                всё будет на месте, а пока-что со мной можно связаться в
-                социальных сетях!
-              </p>
-              <p className="msg lv-msg">
-                Labdien! Diemžēl saits ir aizvērts rekontrukcijas dēļ. Drīzumā
-                viss būs savā vietā, pagaidām ar mani var sazināties sociālajos
-                tīklos!
-              </p>
-              <p className="msg en-msg">
-                Hello! Unfortunately site is closed due to reconstruction. Soon
-                everything will be in place again, for now you can contact me in
-                social networks!
-              </p>
-              <div>
-                <Facebook />
-                <Instagram />
-              </div>
-            </section>
-            {/* <section id="home-section">
-              <div className="column main-column">
-                <nav>
-                  <ul>
-                    <li>Home</li>
-                    <li>Gallery</li>
-                    <li>About Me</li>
-                  </ul>
-                </nav>
-              </div>
-              <div className="column content-column">
-                <div className="column about-me-column">
-                  <div className="about-me-text">
-                    <p>Hello! That is me!</p>
-                  </div>
-                  <picture>
-                    <source
-                      media="(min-width: 650px)"
-                      srcSet={carouselImages[0].url}
-                    />
-                    <img src="img_orange_flowers.jpg" alt="Flowers" />
-                  </picture>
-                </div>
-                <div className="column portrait-column"></div>
-              </div>
-              </section> */}
-          </Layout>
-          {/* </animated.div> */}
-        </MainMenuProvider>
+        <Layout data-test="app-layout" pageTitle="">
+          {Content}
+        </Layout>
       </ThemeProvider>
       <style jsx>
         {`
