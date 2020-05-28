@@ -20,7 +20,7 @@ const Index = ({ images }) => {
   const [state, dispatch] = useReducer(ThemeReducer, DefaultInitialState);
 
   useEffect(() => {
-    Font();
+    //Font();
   });
 
   const Content = maintenance ? <MaintenanceMock /> : <Home images={images} />;
