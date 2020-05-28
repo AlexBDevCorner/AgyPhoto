@@ -14,7 +14,7 @@ import {
 
 import { Client } from '../prismic-configuration';
 
-const maintenance = false;
+const maintenance = true;
 
 const Index = ({ images }) => {
   const [state, dispatch] = useReducer(ThemeReducer, DefaultInitialState);
