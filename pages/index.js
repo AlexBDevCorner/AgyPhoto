@@ -18,9 +18,9 @@ const maintenance = true;
 const Index = ({ images }) => {
   const [state, dispatch] = useReducer(ThemeReducer, DefaultInitialState);
 
-  const Content = maintenance ? <MaintenanceMock /> : <Home images={images} />;
+  const Content = <Home images={images} />;
 
-  return (
+  return maintenance ? <MaintenanceMock /> : (
     <>
       <ThemeProvider value={{ state, dispatch }}>
         <Layout data-test="app-layout" pageTitle="">

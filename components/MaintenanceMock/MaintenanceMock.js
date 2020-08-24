@@ -46,7 +46,7 @@ export default () => (
         }
 
         .msg {
-          color: #f0ffff;
+          color: black;
           font-family: 'Exo 2';
           margin-bottom: 15px;
           padding-right: 10px;
