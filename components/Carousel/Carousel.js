@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import useInterval from './UseInterval';
 
@@ -7,9 +7,9 @@ import ArrowRight from './Icons/ArrowRight';
 import PlayButton from './Icons/PlayButton';
 import PauseButton from './Icons/PauseButton';
 
-const DEFAULT_DELAY = 5000;
+const DEFAULT_DELAY = null;
 
-const Carousel = ({ images = imagesMockup }) => {
+const Carousel = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [delay, setDelay] = useState(DEFAULT_DELAY);
 
@@ -32,11 +32,13 @@ const Carousel = ({ images = imagesMockup }) => {
     setDelay(newDelay);
   };
 
+  console.log(images);
+
   return (
     <>
       <picture>
         <img
-          src={images[currentImageIndex].url}
+          src={images[currentImageIndex].Desktop.url}
           alt={images[currentImageIndex].alt}
         />
         <ArrowLeft
@@ -85,15 +87,15 @@ const Carousel = ({ images = imagesMockup }) => {
         {`
           picture {
             position: relative;
-            max-width: 1200px;
-            max-height: 800px;
+            max-width: 100%;
+            max-height: 100%;
             display: inline-block;
           }
 
           picture img {
             display: block;
-            max-width: 1200px;
-            max-height: 800px;
+            max-width: 100%;
+            max-height: 100%;
             height: auto;
           }
 

@@ -1,6 +1,5 @@
 import React, { useReducer, useEffect } from 'react';
 
-import Font from '../components/Font';
 import Layout from '../components/Layout';
 
 import Home from '../components/Home';
@@ -18,10 +17,6 @@ const maintenance = true;
 
 const Index = ({ images }) => {
   const [state, dispatch] = useReducer(ThemeReducer, DefaultInitialState);
-
-  useEffect(() => {
-    //Font();
-  });
 
   const Content = maintenance ? <MaintenanceMock /> : <Home images={images} />;
 
